@@ -5,7 +5,7 @@ export default React.memo(function IntervalCounter({value, index, id, updateCoun
     const [intervalValue, setIntervalValue] = useState(value)
 
     useEffect(() => {
-        const interval = setInterval(() => setIntervalValue((prevIntervalValue) => prevIntervalValue + 1), 2000)
+        const interval = setInterval(() => setIntervalValue((prevIntervalValue) => prevIntervalValue + 1), 1000)
         return () => clearInterval(interval)
     }, [])
 
