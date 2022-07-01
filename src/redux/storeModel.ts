@@ -1,4 +1,4 @@
-import {ICounter} from "../components/InfiniteCounters";
+import { ICounter } from "../types"
 
 export interface IState {
     counters: ICounter[]

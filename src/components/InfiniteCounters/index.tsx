@@ -2,6 +2,7 @@ import { Button, Container, Row } from "react-bootstrap"
 import CounterContainer from "../../containers/CounterContainer"
 import React from "react"
 import IntervalCounterContainer from "../../containers/IntervalCounterContainer"
+import { ICounter } from "../../types"
 
 interface IInfiniteCountersProps {
     counters: ICounter[],
@@ -9,16 +10,12 @@ interface IInfiniteCountersProps {
     deleteCounter: (id: number) => void
 }
 
-export interface ICounter {
-    id: number,
-    value: number
-}
-
 export const InfiniteCounters = ({counters, addCounter, deleteCounter}: IInfiniteCountersProps) => {
 
     const handleAddCounter = () => {
         const countersValuesSum = counters.reduce((accumulator, counter) => accumulator + counter.value, 0)
-        addCounter(counters.concat({id: counters[counters.length - 1].id + 1, value: countersValuesSum}))
+        const maxId = counters[counters.length - 1].id
+        addCounter(counters.concat({id: maxId + 1, value: countersValuesSum}))
     }
 
     const handleDeleteCounter = (id: number) => {
