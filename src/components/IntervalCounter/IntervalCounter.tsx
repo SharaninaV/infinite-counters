@@ -1,7 +1,14 @@
 import React, { useEffect, useState } from "react"
 import { Container, Row } from "react-bootstrap"
 
-export default React.memo(function IntervalCounter({value, index, id, updateCounter}) {
+interface ICounterProps {
+    value: number,
+    index: number,
+    id: number,
+    updateCounter: (id: number, dynamicValue: number) => void
+}
+
+export default React.memo(function IntervalCounter({value, index, id, updateCounter}: ICounterProps) {
     const [intervalValue, setIntervalValue] = useState(value)
 
     useEffect(() => {

@@ -4,8 +4,7 @@ const initialState = {
     counters: [
         {id: 1, value: 2},
         {id: 2, value: 8}
-    ],
-    needRefresh: false
+    ]
 }
 
 export default function reducer(state = initialState, action) {
@@ -26,8 +25,7 @@ export default function reducer(state = initialState, action) {
         case DELETE_COUNTER:
             return {
             ...state,
-            counters: state.counters.filter(counter => counter.id !== action.payload.id),
-            needRefresh: true
+            counters: state.counters.filter(counter => counter.id !== action.payload.id)
         }
         default: return state
     }
