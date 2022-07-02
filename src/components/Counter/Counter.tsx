@@ -1,5 +1,5 @@
 import React from "react"
-import { Container, Row, Button } from "react-bootstrap"
+import { Container, Row, Button, Col } from "react-bootstrap"
 
 interface ICounterProps {
     value: number,
@@ -19,12 +19,20 @@ export default React.memo(function Counter({value, index, id, updateCounter}: IC
     }
 
     return(
-        <Container>
-                <Row>
+        <Container style={{ marginTop: 10, marginBottom: 10 }}>
+            <Row className="align-items-center">
+                <Col>
                     { index + 1 }
-                    <Button onClick={ handleDecreaseCounter }>-</Button>
+                </Col>
+                <Col>
+                    <Button variant="outline-info" onClick={ handleDecreaseCounter }>-</Button>
+                </Col>
+                <Col>
                     { value }
-                    <Button onClick={ handleIncreaseCounter }>+</Button>
+                </Col>
+                <Col>
+                    <Button variant="outline-info" onClick={ handleIncreaseCounter }>+</Button>
+                </Col>
             </Row>
         </Container>
     )

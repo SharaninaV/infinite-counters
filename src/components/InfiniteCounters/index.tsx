@@ -1,4 +1,4 @@
-import { Button, Container, Row } from "react-bootstrap"
+import { Button, Container, Row, Col, Stack } from "react-bootstrap"
 import CounterContainer from "../../containers/CounterContainer"
 import React from "react"
 import IntervalCounterContainer from "../../containers/IntervalCounterContainer"
@@ -23,20 +23,48 @@ export const InfiniteCounters = ({counters, addCounter, deleteCounter}: IInfinit
     }
 
     return (
-        <Container>
-            <h1>Infinite Counters</h1>
-            <Button onClick={handleAddCounter}>Add Counter</Button>
+        <Container style={{width: "50%"}}>
+            <Row>
+                <h1 style={{textAlign: "center"}}>Infinite Counters</h1>
+            </Row>
+            <Row className="justify-content-md-center">
+                <Button variant="success" onClick={handleAddCounter}>Add Counter</Button>
+            </Row>
             {
                 counters && counters.map((counter, index) => (
                     ((index + 1) % 4) !== 0 ?
-                        <Row key={index + 9}>
-                            <CounterContainer value={counter.value} key={index} index={index} id={counter.id}/>
-                            <Button onClick={() => handleDeleteCounter(counter.id)}>Delete</Button>
-                        </Row>:
-                        <Row key={index + 9}>
-                            <IntervalCounterContainer value={counter.value} key={index} index={index} id={counter.id}/>
-                            <Button onClick={() => handleDeleteCounter(counter.id)}>Delete</Button>
+                        <Stack>
+                        <Row className="bg-light border align-items-center" key={index + 9}>
+                            <Col>
+                                <CounterContainer value={counter.value} key={index} index={index} id={counter.id}/>
+                            </Col>
+                            <Col>
+                                <Button
+                                    style={{marginTop: 10, marginBottom: 10}}
+                                    variant="danger"
+                                    onClick={() => handleDeleteCounter(counter.id)}
+                                >
+                                    Delete
+                                </Button>
+                            </Col>
                         </Row>
+                        </Stack>:
+                        <Stack>
+                        <Row className="bg-light border align-items-center" key={index + 9}>
+                            <Col>
+                                <IntervalCounterContainer value={counter.value} key={index} index={index} id={counter.id}/>
+                            </Col>
+                            <Col>
+                                <Button
+                                    style={{marginTop: 10, marginBottom: 10}}
+                                    variant="danger"
+                                    onClick={() => handleDeleteCounter(counter.id)}
+                                >
+                                    Delete
+                                </Button>
+                            </Col>
+                        </Row>
+                        </Stack>
                 ))
             }
         </Container>

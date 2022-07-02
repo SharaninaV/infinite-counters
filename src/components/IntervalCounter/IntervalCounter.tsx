@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { Container, Row } from "react-bootstrap"
+import { Container, Row, Col } from "react-bootstrap"
 
 interface IIntervalCounterProps {
     value: number,
@@ -25,10 +25,14 @@ export default React.memo(function IntervalCounter({value, index, id, updateCoun
     }, [value])
 
     return(
-        <Container>
-                <Row>
-                    {index + 1}
-                    {value}
+        <Container style={{marginTop: 10, marginBottom: 10}}>
+                <Row className="align-items-center">
+                    <Col>
+                        { index + 1 }
+                    </Col>
+                    <Col>
+                        { value }
+                    </Col>
                 </Row>
         </Container>
     )
