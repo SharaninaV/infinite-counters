@@ -1,4 +1,4 @@
-import Counter from "../components/Counter/Counter"
+import Counter from "../components/Counter"
 import {updateCounter} from "../redux/actions"
 import {connect} from "react-redux"
 import {Dispatch} from "redux";

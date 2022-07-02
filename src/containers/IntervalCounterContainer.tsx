@@ -1,4 +1,4 @@
-import IntervalCounter from "../components/IntervalCounter/IntervalCounter"
+import IntervalCounter from "../components/IntervalCounter"
 import { connect } from "react-redux"
 import { updateCounter } from "../redux/actions"
 import { Dispatch } from "redux"

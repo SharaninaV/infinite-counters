@@ -1,8 +1,8 @@
 import { Button, Container, Row, Col, Stack } from "react-bootstrap"
-import CounterContainer from "../../containers/CounterContainer"
+import CounterContainer from "../containers/CounterContainer"
 import React from "react"
-import IntervalCounterContainer from "../../containers/IntervalCounterContainer"
-import { ICounter } from "../../types"
+import IntervalCounterContainer from "../containers/IntervalCounterContainer"
+import { ICounter } from "../types"
 
 interface IInfiniteCountersProps {
     counters: ICounter[],
