@@ -11,8 +11,8 @@ const mapStateToProps = (state: IState) => ({
 })
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-    addCounter: (counters: ICounter[]) => {dispatch(addCounter(counters))},
-    deleteCounter: (id: number) => {dispatch(deleteCounter(id))}
+    addCounter: (counters: ICounter[]) => { dispatch(addCounter(counters)) },
+    deleteCounter: (id: number) => { dispatch(deleteCounter(id)) }
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(InfiniteCounters)

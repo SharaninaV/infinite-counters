@@ -8,7 +8,7 @@ interface IIntervalCounterProps {
     updateCounter: (id: number, dynamicValue: number) => void
 }
 
-export default React.memo(function IntervalCounter({value, index, id, updateCounter}: IIntervalCounterProps) {
+export default React.memo(function IntervalCounter({ value, index, id, updateCounter }: IIntervalCounterProps) {
     const [intervalValue, setIntervalValue] = useState(value)
 
     useEffect(() => {
@@ -25,7 +25,7 @@ export default React.memo(function IntervalCounter({value, index, id, updateCoun
     }, [value])
 
     return(
-        <Container style={{marginTop: 10, marginBottom: 10}}>
+        <Container style={{ marginTop: 10, marginBottom: 10 }}>
                 <Row className="align-items-center">
                     <Col>
                         { index + 1 }

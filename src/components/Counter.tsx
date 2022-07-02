@@ -8,7 +8,7 @@ interface ICounterProps {
     updateCounter: (id: number, dynamicValue: number) => void
 }
 
-export default React.memo(function Counter({value, index, id, updateCounter}: ICounterProps) {
+export default React.memo(function Counter({ value, index, id, updateCounter }: ICounterProps) {
 
     const handleIncreaseCounter = () => {
         updateCounter(id, value + 1)

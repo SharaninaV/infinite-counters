@@ -1,9 +1,9 @@
-import {ADD_COUNTER, DELETE_COUNTER, UPDATE_COUNTER} from "./constants"
+import { ADD_COUNTER, DELETE_COUNTER, UPDATE_COUNTER } from "./constants"
 
 const initialState = {
     counters: [
-        {id: 1, value: 2},
-        {id: 2, value: 8}
+        { id: 1, value: 2 },
+        { id: 2, value: 8 }
     ]
 }
 
@@ -17,7 +17,7 @@ export default function reducer(state = initialState, action) {
             ...state,
             counters: state.counters.map(counter => {
                 if (counter.id === action.payload.id) {
-                    return {id: counter.id, value: action.payload.value}
+                    return { id: counter.id, value: action.payload.value }
                 }
                 return counter
             })

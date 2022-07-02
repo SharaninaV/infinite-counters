@@ -15,7 +15,7 @@ export const InfiniteCounters = ({counters, addCounter, deleteCounter}: IInfinit
     const handleAddCounter = () => {
         const countersValuesSum = counters.reduce((accumulator, counter) => accumulator + counter.value, 0)
         const maxId = counters[counters.length - 1].id
-        addCounter(counters.concat({id: maxId + 1, value: countersValuesSum}))
+        addCounter(counters.concat({ id: maxId + 1, value: countersValuesSum }))
     }
 
     const handleDeleteCounter = (id: number) => {
@@ -23,12 +23,12 @@ export const InfiniteCounters = ({counters, addCounter, deleteCounter}: IInfinit
     }
 
     return (
-        <Container style={{width: "50%"}}>
+        <Container style={{ width: "50%" }}>
             <Row>
-                <h1 style={{textAlign: "center"}}>Infinite Counters</h1>
+                <h1 style={{ textAlign: "center" }}>Infinite Counters</h1>
             </Row>
             <Row className="justify-content-md-center">
-                <Button variant="success" onClick={handleAddCounter}>Add Counter</Button>
+                <Button variant="success" onClick={ handleAddCounter }>Add Counter</Button>
             </Row>
             {
                 counters && counters.map((counter, index) => (
@@ -36,11 +36,16 @@ export const InfiniteCounters = ({counters, addCounter, deleteCounter}: IInfinit
                         <Stack>
                         <Row className="bg-light border align-items-center" key={index + 9}>
                             <Col>
-                                <CounterContainer value={counter.value} key={index} index={index} id={counter.id}/>
+                                <CounterContainer
+                                    value={ counter.value }
+                                    key={ index }
+                                    index={ index }
+                                    id={ counter.id }
+                                />
                             </Col>
                             <Col>
                                 <Button
-                                    style={{marginTop: 10, marginBottom: 10}}
+                                    style={{ marginTop: 10, marginBottom: 10 }}
                                     variant="danger"
                                     onClick={() => handleDeleteCounter(counter.id)}
                                 >
@@ -50,13 +55,18 @@ export const InfiniteCounters = ({counters, addCounter, deleteCounter}: IInfinit
                         </Row>
                         </Stack>:
                         <Stack>
-                        <Row className="bg-light border align-items-center" key={index + 9}>
+                        <Row className="bg-light border align-items-center" key={ index + 9 }>
                             <Col>
-                                <IntervalCounterContainer value={counter.value} key={index} index={index} id={counter.id}/>
+                                <IntervalCounterContainer
+                                    value={ counter.value }
+                                    key={ index }
+                                    index={ index }
+                                    id={ counter.id }
+                                />
                             </Col>
                             <Col>
                                 <Button
-                                    style={{marginTop: 10, marginBottom: 10}}
+                                    style={{ marginTop: 10, marginBottom: 10 }}
                                     variant="danger"
                                     onClick={() => handleDeleteCounter(counter.id)}
                                 >
