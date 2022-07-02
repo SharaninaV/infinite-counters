@@ -1,0 +1,3 @@
+export const ADD_COUNTER = "ADD_COUNTER"
+export const UPDATE_COUNTER = "UPDATE_COUNTER"
+export const DELETE_COUNTER = "DELETE_COUNTER"

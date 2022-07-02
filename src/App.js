@@ -1,7 +1,8 @@
-import React from "react";
+import React from "react"
+import InfiniteCountersContainer from "./containers/InfiniteCountersContainer.tsx"
 
 export const App = () => {
     return (
-        <div>Hello Infinite Counters</div>
+        <InfiniteCountersContainer />
     )
 }
