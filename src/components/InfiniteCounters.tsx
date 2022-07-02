@@ -14,7 +14,7 @@ export const InfiniteCounters = ({counters, addCounter, deleteCounter}: IInfinit
 
     const handleAddCounter = () => {
         const countersValuesSum = counters.reduce((accumulator, counter) => accumulator + counter.value, 0)
-        const maxId = counters[counters.length - 1].id
+        const maxId = counters.length === 0 ? 0 : counters[counters.length - 1].id
         addCounter(counters.concat({ id: maxId + 1, value: countersValuesSum }))
     }
 

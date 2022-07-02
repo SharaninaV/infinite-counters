@@ -1,10 +1,7 @@
 import { ADD_COUNTER, DELETE_COUNTER, UPDATE_COUNTER } from "./constants"
 
 const initialState = {
-    counters: [
-        { id: 1, value: 2 },
-        { id: 2, value: 8 }
-    ]
+    counters: []
 }
 
 export default function reducer(state = initialState, action) {
